@@ -24,7 +24,7 @@ def main() -> None:
 
     # Set the save path
     # --------------------------------------------------------------------------
-    base_dir = Path.cwd() / "RBM/perfect_setup"
+    base_dir = Path.cwd() / "RBM/pipe_reflections/no_noise"
 
     # Creating the scene
     # --------------------------------------------------------------------------
@@ -36,16 +36,6 @@ def main() -> None:
                                              rotation=(0.0, 0.0, 0.0))
     circle = bpy.context.view_layer.objects.active
     circle.name = "Sample"
-
-
-    # Add pipe
-    bpy.ops.mesh.primitive_cylinder_add(radius=38.0, depth=1333.0,
-                                                    end_fill_type="NOTHING",
-                                                    align='WORLD',
-                                                    location=(0.0, 0.0, 666.5),
-                                                    rotation=(0.0, 0.0, 0.0))
-    pipe = bpy.context.view_layer.objects.active
-    pipe.name = "Pipe"
 
     # Add the camera
     cam_data_0 = pyvale.CameraData(pixels_num=np.array([2464, 2056]),
@@ -84,6 +74,24 @@ def main() -> None:
                       mat_data=material_data,
                       mm_px_resolution=mm_px_resolution)
 
+    # Add pipe
+    bpy.ops.mesh.primitive_cylinder_add(radius=38.0, depth=1333.0,
+                                                    end_fill_type="NOTHING",
+                                                    align='WORLD',
+                                                    location=(0.0, 0.0, 666.5),
+                                                    rotation=(0.0, 0.0, 0.0))
+    pipe = bpy.context.view_layer.objects.active
+    pipe.name = "Pipe"
+    pyvale.BlenderTools.clear_material_nodes(pipe)
+    node_tree = bpy.data.materials["Material.001"].node_tree
+    mat_nodes = bpy.data.materials["Material.001"].node_tree.nodes
+    bsdf = mat_nodes.new(type="ShaderNodeBsdfPrincipled")
+    bsdf.location = (0, 0)
+    bsdf.inputs["Roughness"].default_value = 1
+    bsdf.inputs["Metallic"].default_value = 0.5
+    output = node_tree.nodes.new(type="ShaderNodeOutputMaterial")
+    node_tree.links.new(bsdf.outputs["BSDF"], output.inputs["Surface"])
+
     # Add ring light
     bpy.ops.mesh.primitive_torus_add(align="WORLD",
                                                   location=(0.0, 0.0, 1340),
@@ -96,8 +104,8 @@ def main() -> None:
     ringlight = bpy.context.view_layer.objects.active
     ringlight.name = "RingLight"
     pyvale.BlenderTools.clear_material_nodes(ringlight)
-    node_tree = bpy.data.materials["Material.001"].node_tree
-    mat_nodes = bpy.data.materials["Material.001"].node_tree.nodes
+    node_tree = bpy.data.materials["Material.002"].node_tree
+    mat_nodes = bpy.data.materials["Material.002"].node_tree.nodes
     emission = mat_nodes.new(type="ShaderNodeEmission")
     emission.inputs["Strength"].default_value = 804.519492552*2 # W/m2
     output = node_tree.nodes.new(type="ShaderNodeOutputMaterial")
