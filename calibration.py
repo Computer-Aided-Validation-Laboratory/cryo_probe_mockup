@@ -43,13 +43,15 @@ def main() -> None:
                                  pos_world=np.array([-25, 0, 1500]), # TODO: Work out what to make this value
                                  rot_world=Rotation.from_euler("xyz", [0, -2.5, 0], degrees=True),
                                  roi_cent_world=(0, 0, 0),
-                                 focal_length=75.0)
+                                 focal_length=75.0,
+                                 fstop=8)
     cam_data_1 = pyvale.CameraData(pixels_num=np.array([2464, 2056]),
                                  pixels_size=np.array([0.00345, 0.00345]),
                                  pos_world=np.array([25, 0, 1500]), # TODO: Work out what to make this value
                                  rot_world=Rotation.from_euler("xyz", [0, 2.5, 0], degrees=True),
                                  roi_cent_world=(0, 0, 0),
-                                 focal_length=75.0)
+                                 focal_length=75.0,
+                                 fstop=8)
 
     stereo_system = pyvale.CameraStereo(cam_data_0, cam_data_1)
 
@@ -115,7 +117,7 @@ def main() -> None:
                                         samples=20)
 
 
-    pyvale.BlenderTools.render_calibration_images(render_data, calibration_data, target)    
+    pyvale.BlenderTools.render_calibration_images(render_data, calibration_data, target)
 
 
     # Save Blender file
