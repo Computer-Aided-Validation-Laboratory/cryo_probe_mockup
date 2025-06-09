@@ -87,7 +87,7 @@ def main() -> None:
     mat_nodes = bpy.data.materials["Material.001"].node_tree.nodes
     bsdf = mat_nodes.new(type="ShaderNodeBsdfPrincipled")
     bsdf.location = (0, 0)
-    bsdf.inputs["Roughness"].default_value = 1
+    bsdf.inputs["Roughness"].default_value = 0.5
     bsdf.inputs["Metallic"].default_value = 0.5
     output = node_tree.nodes.new(type="ShaderNodeOutputMaterial")
     node_tree.links.new(bsdf.outputs["BSDF"], output.inputs["Surface"])
@@ -130,8 +130,8 @@ def main() -> None:
         render_data = pyvale.RenderData(cam_data=(stereo_system.cam_data_0,
                                                   stereo_system.cam_data_1),
                                         base_dir=base_dir,
-                                        threads=8,
-                                        samples=30)
+                                        threads=256,
+                                        samples=15)
         # NOTE: The number of threads used to render the images is set within
         # RenderData, it is defaulted to 4 threads
 
