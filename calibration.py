@@ -12,7 +12,7 @@ def main() -> None:
 
     # Set the save path
     # --------------------------------------------------------------------------
-    base_dir = Path.cwd() / "RBM/perfect_setup/calibration_dof"
+    base_dir = Path.cwd() / "RBM/perfect_setup/calibration_dof_new_dist"
 
     # Creating the scene
     # --------------------------------------------------------------------------
@@ -33,14 +33,14 @@ def main() -> None:
     # Add the camera
     cam_data_0 = pyvale.CameraData(pixels_num=np.array([2464, 2056]),
                                  pixels_size=np.array([0.00345, 0.00345]),
-                                 pos_world=np.array([-25, 0, 1500]), # TODO: Work out what to make this value
+                                 pos_world=np.array([-25, 0, 1610]), # TODO: Work out what to make this value
                                  rot_world=Rotation.from_euler("xyz", [0, -2.5, 0], degrees=True),
                                  roi_cent_world=(0, 0, 0),
                                  focal_length=75.0,
                                  fstop=2.8)
     cam_data_1 = pyvale.CameraData(pixels_num=np.array([2464, 2056]),
                                  pixels_size=np.array([0.00345, 0.00345]),
-                                 pos_world=np.array([25, 0, 1500]), # TODO: Work out what to make this value
+                                 pos_world=np.array([25, 0, 1610]), # TODO: Work out what to make this value
                                  rot_world=Rotation.from_euler("xyz", [0, 2.5, 0], degrees=True),
                                  roi_cent_world=(0, 0, 0),
                                  focal_length=75.0,
