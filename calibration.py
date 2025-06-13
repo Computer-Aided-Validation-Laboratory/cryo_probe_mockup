@@ -107,7 +107,7 @@ def main() -> None:
                                                   stereo_system.cam_data_1),
                                         base_dir=base_dir,
                                         threads=256,
-                                        samples=20)
+                                        samples=10)
 
 
     pyvale.BlenderTools.render_calibration_images(render_data, calibration_data, target)
