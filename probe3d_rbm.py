@@ -24,7 +24,7 @@ def main() -> None:
 
     # Set the save path
     # --------------------------------------------------------------------------
-    base_dir = Path.cwd() / "RBM/pipe_reflections/no_noise_dof"
+    base_dir = Path.cwd() / "RBM/pipe_reflections/no_noise_more"
 
     # Creating the scene
     # --------------------------------------------------------------------------
