@@ -4,7 +4,7 @@ from pathlib import Path
 
 def main() -> None:
     # In plane RBM
-    base_dir = Path.cwd() / "DIC results/In pipe/In plane"
+    base_dir = Path.cwd() / "DIC results/Out of pipe/In Plane"
 
     counter = 0
     imposed_disp = 0
@@ -14,9 +14,9 @@ def main() -> None:
 
         ## Horizontal displacements
         if timestep < 10:
-            filename = base_dir / ("u/Image_000" + str(timestep) + "_0.tiff_u.csv")
+            filename = base_dir / ("initial calib/u/Image_000" + str(timestep) + "_0.tiff_u.csv")
         else:
-            filename = base_dir / ("u/Image_00" + str(timestep) + "_0.tiff_u.csv")
+            filename = base_dir / ("initial calib/u/Image_00" + str(timestep) + "_0.tiff_u.csv")
 
         u = np.genfromtxt(filename, delimiter=",")
 
@@ -34,9 +34,9 @@ def main() -> None:
 
         ## Out of plane displacements
         if timestep < 10:
-            filename = base_dir / ("w/Image_000" + str(timestep) + "_0.tiff_w.csv")
+            filename = base_dir / ("initial calib/w/Image_000" + str(timestep) + "_0.tiff_w.csv")
         else:
-            filename = base_dir / ("w/Image_00" + str(timestep) + "_0.tiff_w.csv")
+            filename = base_dir / ("initial calib/w/Image_00" + str(timestep) + "_0.tiff_w.csv")
 
         w = np.genfromtxt(filename, delimiter=",")
 
@@ -45,9 +45,9 @@ def main() -> None:
 
         ## Epipolar distance
         if timestep < 10:
-            filename = base_dir / ("epi_dist/Image_000" + str(timestep) + "_0.tiff_epi_dist.csv")
+            filename = base_dir / ("initial calib/epi_dist/Image_000" + str(timestep) + "_0.tiff_epi_dist.csv")
         else:
-            filename = base_dir / ("epi_dist/Image_00" + str(timestep) + "_0.tiff_epi_dist.csv")
+            filename = base_dir / ("initial calib/epi_dist/Image_00" + str(timestep) + "_0.tiff_epi_dist.csv")
 
         epi = np.genfromtxt(filename, delimiter=",")
 
