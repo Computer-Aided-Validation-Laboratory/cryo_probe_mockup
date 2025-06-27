@@ -63,6 +63,12 @@ Both static and deforming/rigid body motion images can be utilised to optimise t
 # TODO: Error maps - show difference
 
 ### Image averaging
+The impact of using image averaging on the noisefloor was investigated using a set of static images.
+As can be seen below, image averaging improved the noisefloor so should be used for subsequent analysis.
+
+![Image averaging error maps](./Error maps/image_averaging)
+
+# TODO: Remake image averaging - have averaged and non-averaged side by side
 
 ### DIC Params
 
@@ -77,13 +83,13 @@ For the rigid body motion images, the DIC calculated displacement was compared t
 
 This study showed the level of error present in the system associated with the cameras and lenses, not due to the reflection, lighting and stereo angle effects.
 
-![In plane rigid body motion error](./DIC%20results/in_plane_noisefloor)  # TODO: Update these error maps to 
+![In plane rigid body motion error](./Error maps/in_plane_noisefloor)  # TODO: Update these error maps to do std from original image array
 _Error maps for the in plane rigid body motion images_
 
-![Out of plane rigid body motion error](./DIC%20results/out_of_plane_noisefloor)
+![Out of plane rigid body motion error](./Error maps/out_of_plane_noisefloor)
 _Error maps for the out of plane rigid body motion images_
 
-![Static images error](./DIC%20results/noisefloor) # TODO: Update path + error maps
+![Static images error](./Error maps/noisefloor) # TODO: Update path + error maps
 _Error maps for static images_
 
 
@@ -103,7 +109,7 @@ This increased stand-off distance meant that the speckled area still only covere
 
 The temporal noise in static images for both the 5 MPx and 24 MPx cameras with 100 mm lenses can be seen below:
 
-![100 mm lens noisefloor](./DIC%20results/noisefloor_100mm)
+![100 mm lens noisefloor](./Error maps/noisefloor_100mm)
 _Error map showing the temporal noise for static images for both 5 MPx and 24 MPx cameras with 100 mm lenses_
 
 
