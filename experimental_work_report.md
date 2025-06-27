@@ -83,13 +83,13 @@ For the rigid body motion images, the DIC calculated displacement was compared t
 
 This study showed the level of error present in the system associated with the cameras and lenses, not due to the reflection, lighting and stereo angle effects.
 
-![In plane rigid body motion error](./Error_maps/in_plane_noisefloor.svg)  # TODO: Update these error maps to do std from original image array
+![In plane rigid body motion error](./Error_maps/in_plane_noisefloor.svg)
 _Error maps for the in plane rigid body motion images_
 
 ![Out of plane rigid body motion error](./Error_maps/out_of_plane_noisefloor.svg)
 _Error maps for the out of plane rigid body motion images_
 
-![Static images error](./Error_maps/noisefloor.svg) # TODO: Update path + error maps
+![Static images error](./Error_maps/noisefloor_averaged.svg) 
 _Error maps for static images_
 
 
