@@ -89,7 +89,7 @@ _Error maps for the in plane rigid body motion images_
 ![Out of plane rigid body motion error](./Error_maps/out_of_plane_noisefloor.svg)
 _Error maps for the out of plane rigid body motion images_
 
-![Static images error](./Error_maps/noisefloor_averaged.svg) 
+![Static images error](./Error_maps/noisefloor_averaged)
 _Error maps for static images_
 
 
