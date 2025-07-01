@@ -60,15 +60,17 @@ Using the optimised calibration parameters lowers both the systematic and random
 The level of error for in-plane movement is increased, but ideal this error should be low enough that an increase will not be significant.
 Both static and deforming/rigid body motion images can be utilised to optimise the calibration.
 
-# TODO: Error maps - show difference
+![Optimisation for static images error maps](./Error_maps/compare_optimisation_static.svg)
+_Error maps comparing the impact of using correlation-based optimisation for static images_
+
+![Optimisation for rbm image error maps](./Error_maps/compare_optimisation_rbm.svg)
+_Error maps comparing the impact of using correlation-based optimisation for rigid body motion images_
 
 ### Image averaging
 The impact of using image averaging on the noisefloor was investigated using a set of static images.
 As can be seen below, image averaging improved the noisefloor so should be used for subsequent analysis.
 
 ![Image averaging error maps](./Error_maps/image_averaging.svg)
-
-# TODO: Remake image averaging - have averaged and non-averaged side by side
 
 ### DIC Params
 
@@ -89,17 +91,22 @@ _Error maps for the in plane rigid body motion images_
 ![Out of plane rigid body motion error](./Error_maps/out_of_plane_noisefloor.svg)
 _Error maps for the out of plane rigid body motion images_
 
-![Static images error](./Error_maps/noisefloor_averaged)
+![Static images error](./Error_maps/noisefloor_averaged.svg)
 _Error maps for static images_
 
 
 ## Level of systematic and random error in the setup
 ### Static images
+The error maps below show the systematic and random error for both in plane and out of plane displacement.
+Two sets of static images were taken, so the results for both sets of images is shown.
 
+![Static images noisefloor](./Error_maps/noisefloor_static.svg)
 
 ### Rigid body motion
 Rigid body motion was carried out both in and out of plane to characterise the level of undertainty in the DIC measurements.
 The difference between the imposed and calculated displacement was analysed.
+
+![Rigid body motion noisefloor](./Error_maps/noisefloor_rbm.svg)
 
 
 ### 100 mm lenses setup
