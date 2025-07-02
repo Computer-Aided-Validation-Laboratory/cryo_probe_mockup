@@ -95,7 +95,7 @@ def main() -> None:
             ['w_opt', 'u_opt', 'epi_opt']
         ], figsize=(11, 7))
 
-        w = ax['w'].imshow(w_comparison)
+        w = ax['w'].imshow(w)
         ax['w'].set_yticklabels([])
         ax['w'].set_xticklabels([])
         fig.colorbar(w, ax=ax['w'])
@@ -157,11 +157,15 @@ def main() -> None:
         ax['epi_opt'].set_title("Epipolar distance")
         fig.text(0.725, 0.11, ("Mean = " + str(epi_mean_optimised)))
 
-        fig.suptitle("In Plane Rigid Body Motion", size=16, weight='bold')
+        fig.suptitle("In Pipe Out of Plane Rigid Body Motion", size=16, weight='bold')
+        fig.text(0.45, 0.93, ("Timestep = " + str(timestep)))
         fig.text(0.425, 0.9, "Initial calibration", size=14, style='italic')
         fig.text(0.4, 0.475, "Optimised calibration", size=14, style='italic')
 
         plt.show()
+        # filename = base_dir / ("Results comparison/results_" + str(timestep))
+        # plt.savefig(filename, format='svg')
+        # plt.close()
 
 
 if __name__ == "__main__":

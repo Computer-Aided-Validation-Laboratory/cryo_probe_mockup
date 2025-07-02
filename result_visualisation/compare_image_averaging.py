@@ -3,10 +3,8 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 def main() -> None:
-    u_comp = []
     u_disp = []
     w_disp = []
-    u_comp_avg = []
     u_disp_avg = []
     w_disp_avg = []
 
@@ -32,10 +30,6 @@ def main() -> None:
             if i ==0:
                 u = np.delete(u, 0, axis=0)
 
-            imposed_u = np.full_like(u, fill_value=imposed_disp, dtype='float64')
-            u_comparison = np.subtract(u, imposed_u)
-
-            u_comp.append(u_comparison)
             u_disp.append(u)
 
             counter += 1
@@ -68,10 +62,6 @@ def main() -> None:
                 u = np.delete(u, 0, axis=0)
                 u = np.delete(u, 0, axis=1)
 
-            imposed_u = np.full_like(u, fill_value=imposed_disp, dtype='float64')
-            u_comparison = np.subtract(u, imposed_u)
-
-            u_comp_avg.append(u_comparison)
             u_disp_avg.append(u)
 
             ## Out of plane displacements
@@ -90,21 +80,19 @@ def main() -> None:
 
 
 
-    u_comp = np.dstack(u_comp)
     u_disp = np.dstack(u_disp)
     w_disp = np.dstack(w_disp)
-    u_comp_avg = np.dstack(u_comp_avg)
     u_disp_avg = np.dstack(u_disp_avg)
     w_disp_avg = np.dstack(w_disp_avg)
 
     # No image averaging
-    u_mean = np.mean(u_comp, axis=2)
+    u_mean = np.mean(u_disp, axis=2)
     u_std = np.std(u_disp, axis=2)
     w_mean = np.mean(w_disp, axis=2)
     w_std = np.std(w_disp, axis=2)
 
     # Image averaging
-    u_mean_avg = np.mean(u_comp_avg, axis=2)
+    u_mean_avg = np.mean(u_disp_avg, axis=2)
     u_std_avg = np.std(u_disp_avg, axis=2)
     w_mean_avg = np.mean(w_disp_avg, axis=2)
     w_std_avg = np.std(w_disp_avg, axis=2)
@@ -170,7 +158,7 @@ def main() -> None:
     fig.text(0.45, 0.48, "Image averaging", size=14)
 
     # plt.show()
-    filename = Path.cwd() / "DIC results/image_averaging"
+    filename = Path.cwd() / "Error_maps/image_averaging.svg"
     plt.savefig(filename, format="svg")
     plt.close()
 
