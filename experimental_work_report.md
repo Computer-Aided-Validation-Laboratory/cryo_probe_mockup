@@ -16,7 +16,7 @@ This impacted the lighting, lens choice and possible stereo angle.
 The lighting in this setup was challenging since a powerful light source was required to illuminate the sample located ~1.4 m away.
 It was decided to use a ring light to avoid shadows from the cameras.
 This lighting then introduced another challenge: reflections from the probe itself.
-In order to combat the effect of these reflections, polariser film was placed in front of the light and polarising filters were attatched to the lenses.
+In order to combat the effect of these reflections, polarising film was placed in front of the light and polarising filters were attatched to the lenses.
 These polarisers greatly improved the quality of the images taken, and allowed them to be correlated through MatchID.
 Another issue with the lighting was the difficulty in producing images where no part of the sample was over-exposed or in shadow.
 This was possible with a smaller stereo angle between the cameras, but as the angle between the cameras increased this became a challenge and meant that MatchID struggled to correlate the images.
@@ -27,7 +27,7 @@ Due to the long distance to the sample and the small diameter of the probe, the 
 This meant that only a small stereo angle could be acheived.
 This positioning constraint also impacted the choice of lenses to use.
 Normally, high focal length macro lenses could be used for these scenarios with large stand-off distances.
-However, since these macro lenses are considerably larger they could not be used for this application.
+However, since these lenses are considerably larger they could not be used for this application.
 The size of lens was also a constraint of the stereo angle.
 
 With the challenging camera setup came a challenging calibration.
@@ -71,8 +71,6 @@ The impact of using image averaging on the noisefloor was investigated using a s
 As can be seen below, image averaging improved the noisefloor so should be used for subsequent analysis.
 
 ![Image averaging error maps](./Error_maps/image_averaging.svg)
-
-### DIC Params
 
 ## Impact of Stereo Angle
 The impact of the non-optimal stereo angle and reflections from the pipe were investigated.
@@ -134,6 +132,7 @@ Therefore, a level of systematic error will be present in the results due to the
 During testing, as the probe cools down it will contract. This will change the working distance between the sample and cameras.
 This raises the question of whether the sample will remain in focus due to the camera's depth of field.
 It may also be difficult to balance the depth of field and aperture, as lighting is also an issue in the setup.
+With the current setup, the smallest aperture I have been able to use is f/4, as with smaller apertures the lighting is not strong enough to illumiate the sample sufficiently.
 
 ### Testing of calibration procedure
 One method of calibrating the setup would be to calibrate the setup ex-situ, and then utilise the correlation-based optimisation module.
@@ -144,8 +143,7 @@ This method could be investigated through calibrating the system, moving the cam
 One difficulty with the stereo setup was positioning the ring light.
 It was challenging to mititage the effects of overexposure from the light with poor lighting on the sample.
 Therefore, it may be useful to experiment with different lighting scenarios e.g. behind the cameras to see if this can mitigate this issues.
-
-Stronger light - lower aperture - better depth of field (currently can only acheive aperture 4 with light)
+A more powerful light will be required, as in order to gain better depth of field a smaller aperture will be required which needs better lighting, as mentioned above.
 
 ### Longer focal length lenses
 One issue with the setup was the challenges in calibration.
@@ -154,6 +152,10 @@ This means that calibration images taken are only representative of part of the 
 One way to mitigate this would be to use lenses with a higher focal length to get higher magnification.
 This may in practice be challenging as higher focal length lenses will be larger, which will impact the stereo angle that can be acheived between the cameras.
 
-Higher res cams
+### Higher resolution cameras
+Two different cameras have been tested so far: 5 MPx and 24 MPx.
+The setup with the 24 MPx camera was difficult to calibrate, due to the larger FOV.
+However, the resolution of images from the 5 MPx cameras could be improved.
+Therefore, it may be useful to investigate using a camera with a resolution between the two, to compromise between resolution and FOV size.
 
 
