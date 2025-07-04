@@ -43,7 +43,7 @@ Due to the increased stand-off distance the setup with the 24 MPx cameras was di
 
 Images of the mockup can be seen below:
 
-![Mock-up](./Error_maps/mock-up.jpeg)
+![Mock-up](./Error_maps/mock-up.jpeg =200x)
 _The mock-up with stereo DIC setup_
 
 ![Cameras1](./Error_maps/cameras1.jpeg)
