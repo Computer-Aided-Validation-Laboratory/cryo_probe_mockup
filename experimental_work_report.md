@@ -41,6 +41,15 @@ These were tested with both 24 MPx and 5 MPx cameras.
 Since the 100 mm lenses are wider than the 75 mm lenses, they had to be moved further back to get an adequate stereo angle.
 Due to the increased stand-off distance the setup with the 24 MPx cameras was difficult to calibrate, as the speckled area only made up around a third of the FOV.
 
+Images of the mockup can be seen below:
+
+![Mock-up](./Error_maps/mock-up.jpeg)
+_The mock-up with stereo DIC setup_
+
+![Cameras1](./Error_maps/cameras1.jpeg)
+
+![Cameras2](./Error_maps/cameras2.jpeg)
+
 ## DIC Processing
 ### Correlation-based Optimisation
 MatchID's correlation-based optimisation calibration method was tested on both experimental and Blender-rendered images.
