@@ -44,7 +44,7 @@ Due to the increased stand-off distance the setup with the 24 MPx cameras was di
 Images of the mockup can be seen below:
 
 ![Mock-up](./Error_maps/mock-up.jpeg)
-_The mock-up with stereo DIC setup_
+_The mock-up with stereo DIC setup, with overall length = 193cm_
 
 ![Cameras1](./Error_maps/cameras1.jpeg)
 
